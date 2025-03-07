@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpowqhervoo3a"]
+
+[ext_resource type="Script" path="res://soundtrack.gd" id="1_b1j64"]
+
+[node name="Vorpal" type="Node"]
+script = ExtResource("1_b1j64")

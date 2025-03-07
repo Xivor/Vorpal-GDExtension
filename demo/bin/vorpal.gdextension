@@ -1,0 +1,12 @@
+[configuration]
+
+entry_symbol = "vorpal_library_init"
+compatibility_minimum = "4.3"
+reloadable = true
+
+[libraries]
+
+linux.debug.x86_64 = "res://bin/libvorpal.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://bin/libvorpal.linux.template_release.x86_64.so"
+
+# TODO add a dependency for OpenAL and libpd

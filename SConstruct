@@ -18,9 +18,7 @@ env.Append(CPPPATH=['/usr/local/include/vorpal'])
 env.Append(LIBS=['vorpal'])
 env.Append(LIBS=['pdcpp'])
 env.Append(LIBS=['openal'])
-# sources = Glob("vorpal/src/vorpal/*.cpp")
 sources = Glob("vorpal/src/vorpal/*.cpp")
-# sources = Glob("vorpal/*.cpp")
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
