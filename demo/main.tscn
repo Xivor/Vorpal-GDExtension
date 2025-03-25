@@ -4,3 +4,20 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kq6ul")
+
+[node name="Block" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 299.0
+offset_right = 505.0
+offset_bottom = 330.0
+text = "Block"
+
+[node name="Unblock" type="Button" parent="."]
+offset_left = 664.0
+offset_top = 304.0
+offset_right = 736.0
+offset_bottom = 335.0
+text = "Unblock"
+
+[connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
+[connection signal="pressed" from="Unblock" to="." method="_on_unblock_pressed"]

@@ -1,4 +1,4 @@
-#N canvas 239 258 1317 723 16;
+#N canvas 41 0 1317 670 16;
 #X msg 72 128 start;
 #X obj 72 220 throw~ \$0-out;
 #X obj 72 85 vorpal_parameter \$0 intro;
@@ -18,11 +18,14 @@
 #X obj 169 591 throw~ \$0-out;
 #X obj 72 160 vorpal_sample samples/01_NV_EN_solve3.wav;
 #X obj 169 536 vorpal_sample samples/05_NV_EN_listem.wav;
-#X obj 758 244 vorpal_sample samples/04_NV_EN_the_gate_is_open.wav
-;
+#X obj 758 244 vorpal_sample samples/04_NV_EN_the_gate_is_open.wav;
 #X obj 722 337 vorpal_sample samples/03_NV_EN_1chnleft.wav;
 #X obj 687 437 vorpal_sample samples/02_NV_EN_2chnleft.wav;
+#X obj 276 226 dac~;
+#X obj 441 280 print;
+#X obj 440 248 t b;
 #X connect 0 0 17 0;
+#X connect 0 0 24 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
 #X connect 5 0 7 0;
@@ -37,7 +40,10 @@
 #X connect 14 0 15 0;
 #X connect 15 0 18 0;
 #X connect 17 0 1 0;
+#X connect 17 0 22 0;
+#X connect 17 0 22 1;
 #X connect 18 0 16 0;
 #X connect 19 0 8 0;
 #X connect 20 0 9 0;
 #X connect 21 0 10 0;
+#X connect 24 0 23 0;
