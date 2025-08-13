@@ -50,7 +50,21 @@ The Vorpal GDExtension plugin is designed to be built using Scons. Follow these 
     cd Vorpal-GDExtension
     ```
 
-3. Build the plugin using Scons:
+3. Navigate to the vorpal library directory:
+
+    ```bash
+    cd vorpal
+    ```
+
+    and build the vorpal library following the instructions in the [VORPAL repository's](https://github.com/haruo-gabriel/vorpal/tree/gdextension-plugin) README file (ensure you are in the `gdextension-plugin` branch).
+
+4. Navigate back to the root directory of the repository:
+
+    ```bash
+    cd ..
+    ```
+
+5. Build the plugin using Scons:
 
     ```bash
     scons platform=linux
