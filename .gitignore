@@ -5,3 +5,5 @@ tmp/
 demo/.godot/
 other/
 .sconsign.dblite
+
+.github/
