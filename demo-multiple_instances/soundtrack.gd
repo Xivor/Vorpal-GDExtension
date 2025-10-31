@@ -24,10 +24,19 @@ func is_ok():
 	
 func tick(delta):
 	vorpal_module.tick(delta)
-	
 
-func event_instance(path):
-	return vorpal_module.event_instance(path)
+
+# Multi-instance management
+func create_instance():
+	return vorpal_module.create_instance()
+
+
+func destroy_instance(instance_id):
+	vorpal_module.destroy_instance(instance_id)
+
+
+func event_instance(path, instance_id = 0):
+	return vorpal_module.event_instance(path, instance_id)
 
 
 func free_event(id):
