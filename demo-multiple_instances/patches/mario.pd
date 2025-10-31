@@ -1,0 +1,116 @@
+#N canvas 202 191 1314 839 16;
+#X obj 20 743 qlist;
+#X msg 20 706 read \$1 \, bang;
+#X obj 20 668 symbol;
+#X obj 20 30 inlet;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-markovdelay 85 float 3;
+#A 0 1536 512 1024 512 1024 1536 1024 1 512 4096 512 512 512 512 2048
+2048 1024 1536 1024 1024 683 512 683 1536 1024 1024 1536 512 512 683
+5120 1536 2048 1536 1024 1536 4608 1536 1024 1024 512 3072 682 512
+512 512 683 512 1024 1024 1024 512 512 682 2048 1024 0 1536 1024 1024
+2048 1024 1024 512 2048 2560 1024 2048 512 2048 512 682 512 512 683
+512 512 512 512 682 1024 1024 683 683 1024;
+#X coords 0 8192 85 0 200 140 1 0 0;
+#X restore 904 450 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-markovharm1 85 float 3;
+#A 0 55 66 69 74 64 60 64 66 67 68 65 62 65 0 72 66 0 64 74 77 72 64
+67 64 67 69 72 71 60 77 76 60 72 64 68 65 68 68 65 65 0 76 77 71 65
+68 77 70 66 72 60 64 77 71 0 77 0 76 67 66 64 72 60 64 68 76 62 67
+72 68 75 74 67 60 76 74 66 69 74 71 64 61 67 72 64;
+#X coords 0 128 85 0 200 140 1 0 0;
+#X restore 662 632 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array \$0-markovharm2 85 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 79 0 0 0 0 71 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 79 0 0 79 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 128 85 0 200 140 1 0 0;
+#X restore 882 634 graph;
+#N canvas 3 81 450 250 (subpatch) 0;
+#X array \$0-markovnote 85 float 3;
+#A 0 64 76 76 77 69 69 68 76 72 72 69 71 69 64 76 76 64 68 77 84 81
+72 72 72 79 77 76 75 67 81 79 67 76 72 72 74 72 75 69 69 60 79 81 79
+74 72 81 74 72 77 67 72 84 79 67 84 0 79 76 76 72 76 69 67 72 79 71
+71 77 72 78 77 76 69 79 77 76 72 77 74 72 70 76 76 67;
+#X coords 0 128 85 0 200 140 1 0 0;
+#X restore 674 445 graph;
+#X obj 20 66 route load state;
+#X obj 469 66 r markov-state-count;
+#X obj 469 151 s \$0-markovnote;
+#X msg 469 109 resize \$1;
+#X obj 715 65 r markov-state-note;
+#X obj 715 238 r markov-state-delay;
+#X obj 1015 67 r markov-state-harm1;
+#X obj 469 191 s \$0-markovdelay;
+#X obj 469 231 s \$0-markovharm1;
+#X obj 469 271 s \$0-markovharm2;
+#X obj 716 171 array set \$0-markovnote;
+#X obj 715 110 list split 1;
+#X obj 715 290 list split 1;
+#X obj 716 351 array set \$0-markovdelay;
+#X obj 1015 110 list split 1;
+#X obj 1016 171 array set \$0-markovharm1;
+#X obj 1015 225 r markov-state-harm2;
+#X obj 1015 270 list split 1;
+#X obj 1016 331 array set \$0-markovharm2;
+#X obj 185 161 t f b;
+#X msg 303 196 1;
+#X obj 98 123 t f f f f;
+#X obj 156 301 t f b;
+#X msg 274 336 1;
+#X obj 127 435 t f b;
+#X msg 240 469 1;
+#X obj 185 260 outlet delay;
+#X obj 156 400 outlet harm2;
+#X obj 127 534 outlet harm1;
+#X obj 98 565 t f b;
+#X msg 211 599 1;
+#X obj 98 664 outlet note;
+#X obj 98 633 array get \$0-markovdelay;
+#X obj 127 503 array get \$0-markovnote;
+#X obj 156 369 array get \$0-markovharm1;
+#X obj 185 229 array get \$0-markovharm2;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 8 0;
+#X connect 8 0 2 0;
+#X connect 8 1 29 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 11 0 15 0;
+#X connect 11 0 16 0;
+#X connect 11 0 17 0;
+#X connect 12 0 19 0;
+#X connect 13 0 20 0;
+#X connect 14 0 22 0;
+#X connect 19 0 18 0;
+#X connect 19 1 18 1;
+#X connect 20 0 21 0;
+#X connect 20 1 21 1;
+#X connect 22 0 23 0;
+#X connect 22 1 23 1;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 25 1 26 1;
+#X connect 27 0 43 0;
+#X connect 27 1 28 0;
+#X connect 28 0 43 1;
+#X connect 29 0 37 0;
+#X connect 29 1 32 0;
+#X connect 29 2 30 0;
+#X connect 29 3 27 0;
+#X connect 30 0 42 0;
+#X connect 30 1 31 0;
+#X connect 31 0 42 1;
+#X connect 32 0 41 0;
+#X connect 32 1 33 0;
+#X connect 33 0 41 1;
+#X connect 37 0 40 0;
+#X connect 37 1 38 0;
+#X connect 38 0 40 1;
+#X connect 40 0 39 0;
+#X connect 41 0 36 0;
+#X connect 42 0 35 0;
+#X connect 43 0 34 0;

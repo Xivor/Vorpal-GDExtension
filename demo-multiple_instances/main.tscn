@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://yjgt8g76xlft"]
+
+[ext_resource type="Script" uid="uid://bkgcw3hikqss3" path="res://main.gd" id="1_kq6ul"]
+[ext_resource type="PackedScene" uid="uid://c3yqd5xvw8ijo" path="res://multi_instance_demo.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kq6ul")
+
+[node name="Block" type="Button" parent="."]
+visible = false
+offset_left = 455.0
+offset_top = 299.0
+offset_right = 505.0
+offset_bottom = 330.0
+text = "Block"
+
+[node name="Unblock" type="Button" parent="."]
+visible = false
+offset_left = 664.0
+offset_top = 304.0
+offset_right = 736.0
+offset_bottom = 335.0
+text = "Unblock"
+
+[node name="MultiInstanceDemo" parent="." instance=ExtResource("2_0xm2m")]
+
+[connection signal="pressed" from="Block" to="." method="_on_block_pressed"]
+[connection signal="pressed" from="Unblock" to="." method="_on_unblock_pressed"]

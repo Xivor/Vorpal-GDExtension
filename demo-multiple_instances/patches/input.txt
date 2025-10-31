@@ -1,0 +1,20 @@
+markov-arity 2;
+markov-size 4;
+markov-state 0;
+markov-set 0 0 .25 .5 .25;
+markov-set 1 .25 .25 .25 .25;
+markov-set 2 .25 .25 .25 .25;
+markov-set 3 .25 .25 .25 .25;
+markov-set 4 .25 .25 .25 .25;
+markov-set 5 .5 0 .25 .25;
+markov-set 6 .25 .25 .25 .25;
+markov-set 7 .25 .25 .25 .25;
+markov-set 8 .25 .25 .25 .25;
+markov-set 9 .25 .25 .25 .25;
+markov-set 10 .25 .25 0 .5;
+markov-set 11 .25 .25 .25 .25;
+markov-set 12 .25 .25 .25 .25;
+markov-set 13 .25 .25 .25 .25;
+markov-set 14 .25 .25 .25 .25;
+markov-set 15 .25 .5 .25 0;
+

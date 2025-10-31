@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3yqd5xvw8ijo"]
+
+[ext_resource type="Script" uid="uid://bf4m0qx0t78pq" path="res://multi_instance_demo.gd" id="1_multi"]
+
+[node name="MultiInstanceDemo" type="Node"]
+script = ExtResource("1_multi")

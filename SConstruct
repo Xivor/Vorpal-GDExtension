@@ -15,6 +15,8 @@ env = SConscript("godot-cpp/SConstruct")
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=['vorpal/src/vorpal'])
 env.Append(CPPPATH=['/usr/local/include/vorpal'])
+env.Append(CPPPATH=['/usr/local/include/libpd'])
+env.Append(CPPPATH=['/usr/local/include/libpd/util'])
 env.Append(LIBS=['vorpal'])
 env.Append(LIBS=['pdcpp'])
 env.Append(LIBS=['openal'])
