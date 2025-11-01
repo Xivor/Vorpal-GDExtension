@@ -36,8 +36,8 @@ func _ready() -> void:
 	else:
 		print("[ERROR] Failed to create music event")
 	
-	# Event on SFX instance (using instance_id parameter)
-	sfx_event_id = Vorpal.event_instance("step-sfx", sfx_instance_id)
+	# Event on SFX instance (using instance_id parameter) - using tetris-main as longer audio
+	sfx_event_id = Vorpal.event_instance("tetris-main", sfx_instance_id)
 	if sfx_event_id >= 0:
 		print("[OK] SFX event created: ID ", sfx_event_id, " on instance ", sfx_instance_id)
 	else:
@@ -85,12 +85,24 @@ func _exit_tree() -> void:
 
 func _on_block_pressed() -> void:
 	if music_event_id >= 0:
-		Vorpal.push_command(music_event_id, "block")
-		print("[ACTION] Music blocked")
+		Vorpal.push_command(music_event_id, "stop")
+		print("[ACTION] Music stopped")
 
 
 func _on_unblock_pressed() -> void:
 	if music_event_id >= 0:
-		Vorpal.push_command(music_event_id, "unblock")
-		print("[ACTION] Music unblocked")
+		Vorpal.push_command(music_event_id, "start")
+		print("[ACTION] Music started")
+
+
+func _on_block_sfx_pressed() -> void:
+	if sfx_event_id >= 0:
+		Vorpal.push_command(sfx_event_id, "stop")
+		print("[ACTION] SFX stopped")
+
+
+func _on_unblock_sfx_pressed() -> void:
+	if sfx_event_id >= 0:
+		Vorpal.push_command(sfx_event_id, "start")
+		print("[ACTION] SFX started")
 	
