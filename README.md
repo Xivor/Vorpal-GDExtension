@@ -8,7 +8,7 @@ VORPAL as a GDExtension plugin for the Godot Game Engine.
 
 Before you start, ensure you have the following prerequisites installed:
 
-- Godot 4.3-stable (download from the [official Godot website](https://godotengine.org/download/archive/4.3-stable/))
+- Godot 4.3-stable (download from the [official Godot website](https://godotengine.org/download/archive/4.4.1-stable/))
 - GCC 9+ (download from the [official GCC website](https://gcc.gnu.org/releases.html))
 - Python 3.8+ (download from the [official Python website](https://www.python.org/downloads/))
 - Scons 4.0+ (download from the [official Scons website](https://scons.org/pages/download.html))
@@ -56,7 +56,7 @@ The Vorpal GDExtension plugin is designed to be built using Scons. Follow these 
     cd vorpal
     ```
 
-    and build the vorpal library following the instructions in the [VORPAL repository's](https://github.com/haruo-gabriel/vorpal/tree/gdextension-plugin) README file (ensure you are in the `gdextension-plugin` branch).
+    and build the vorpal library following the instructions in the [VORPAL repository's](https://github.com/haruo-gabriel/vorpal/tree/multiple-instances) README file (ensure you are in the `multiple-instances` branch).
 
 4. Navigate back to the root directory of the repository:
 
@@ -74,8 +74,8 @@ The Vorpal GDExtension plugin is designed to be built using Scons. Follow these 
 
 To test the compiled plugin, you can use the provided demo project. Follow these steps:
 
-1. Open Godot 4.3-stable.
-2. Import the `project.godot` file located in the `Vorpal-GDExtension/demo` directory.
+1. Open Godot 4.4.1-stable.
+2. Import the `project.godot` file located in the `Vorpal-GDExtension/demo-multiple_instances` directory.
 3. Run the project.
 
 This will open a simple scene that should make sound. Check the console output for any errors or logs.
